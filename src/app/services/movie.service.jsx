@@ -26,9 +26,9 @@ export const MovieService = {
         return await axios.post(`${MOVIE_SERVICE}/api/movies`, movie);
     },
 
-    async list(directorSearchParameters) {
+    async update(id, movie) {
         const MOVIE_SERVICE = config.getMovieService();
 
-        return await axios.post(`${MOVIE_SERVICE}/api/movies/_list`, directorSearchParameters);
+        return await axios.post(`${MOVIE_SERVICE}/api/movies/${id}`, movie);
     }
 }
