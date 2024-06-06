@@ -25,6 +25,9 @@ import Header from '../components/Header';
 import IntlProvider from '../components/IntlProvider';
 import MissedPage from '../components/MissedPage';
 import SearchParamsConfigurator from '../components/SearchParamsConfigurator';
+import MovieList from "../components/MovieList";
+import MovieDetail from "../components/MovieDetail";
+import CreateMovie from "../components/CreateMovie";
 
 function App() {
   const dispatch = useDispatch();
@@ -74,6 +77,18 @@ function App() {
                     <Route
                       element={<DefaultPage />}
                       path={`${pageURLs[pages.defaultPage]}`}
+                    />
+                    <Route
+                        element={<MovieList />}
+                        path={`/movies`}
+                    />
+                    <Route
+                        element={<MovieDetail />}
+                        path={`/movies/:id`}
+                    />
+                    <Route
+                      element={<CreateMovie />}
+                      path={'movies/create'}
                     />
                     <Route
                       element={<SecretPage />}
